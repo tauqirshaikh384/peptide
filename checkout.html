@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | pepcarepro</title>
+<meta name="theme-color" content="#1E7560">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#1E7560;--ink:#16323A;--bg:#EEF7F1;--lime:#DCD3FF;--line:#CFEBDD;--mute:#3F5F66;--h:"Fredoka",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.5 "DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+header{background:var(--brand);color:#fff}
+header div{max-width:1000px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font:600 24px var(--h);color:#fff;text-decoration:none}
+header a.b{color:#fff;font-size:14px}
+main{max-width:1000px;margin:0 auto;padding:32px 20px 60px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+h1{font:600 34px var(--h);letter-spacing:-1px;grid-column:1/-1}
+h2{font:600 20px var(--h);margin-bottom:12px}
+.box{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px;margin-bottom:18px}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer;font-weight:400}
+.pay:has(input:checked){border-color:var(--brand);background:#EEF7F1}
+.pay b{display:block}.pay small{color:var(--mute)}
+.li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;font-size:15px}
+.tot{display:flex;justify-content:space-between;padding:4px 0}
+.tot.g{font-weight:700;font-size:19px;border-top:1px solid var(--line);margin-top:8px;padding-top:12px}
+.ck{display:flex;gap:8px;font-weight:400;font-size:13px;color:var(--mute)}
+.btn{width:100%;background:var(--brand);color:#fff;border:0;border-radius:99px;padding:15px;font:600 16px Inter,sans-serif;cursor:pointer;margin-top:12px}
+.btn:disabled{opacity:.5;cursor:wait}
+.err{color:#b3261e;font-size:14px;min-height:20px;margin-top:8px}
+.sec{font-size:13px;color:var(--mute);text-align:center;margin-top:10px}
+@media(max-width:800px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div><a class="logo" href="/">pepcarepro</a><a class="b" href="/">Back to shop</a></div></header>
+<main>
+<h1>Checkout</h1>
+<form id="f" novalidate>
+<div class="box">
+<h2>Contact and shipping</h2>
+<label for="name">Full name</label><input id="name" type="text" autocomplete="name" required>
+<div class="row">
+<div><label for="email">Email</label><input id="email" type="email" autocomplete="email" required></div>
+<div><label for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel"></div>
+</div>
+<label for="addr">Shipping address (USA)</label>
+<textarea id="addr" autocomplete="street-address" placeholder="Street, city, state, ZIP" required></textarea>
+</div>
+<div class="box">
+<h2>Payment</h2>
+<label class="pay"><input type="radio" name="pm" value="card" checked><span><b>Credit or debit card</b><small>Pay securely on Stripe's hosted page. Card details never touch this site.</small></span></label>
+<label class="pay"><input type="radio" name="pm" value="manual"><span><b>Pay after confirmation</b><small>We confirm your order by email, then send a payment link or bank transfer details.</small></span></label>
+</div>
+<label class="ck"><input type="checkbox" id="agree"> I am 21 or older. I understand peptides and lab supplies are sold for laboratory research use only, not for human or animal use.</label>
+<div class="err" id="err" role="alert"></div>
+<button class="btn" id="go" type="submit">Place order</button>
+<p class="sec">Prices in USD. Payments are processed by Stripe.</p>
+</form>
+<aside class="box">
+<h2>Order summary</h2>
+<div id="lines"></div>
+<div class="tot"><span>Subtotal</span><span id="sub"></span></div>
+<div class="tot"><span>Shipping</span><span id="ship"></span></div>
+<div class="tot g"><span>Total</span><span id="tot"></span></div>
+</aside>
+</main>
+<script>
+const CFG = { email: "orders@pepcarepro.com", freeShip: 150, ship: 9.99 }; // keep in sync with index.html
+const $ = id => document.getElementById(id), money = n => "$" + n.toFixed(2);
+let P = [], cart = {};
+try { cart = JSON.parse(localStorage.getItem("cart") || "{}"); } catch (e) {}
+const items = () => Object.keys(cart).map(id => ({ id, qty: cart[id] }));
+function totals() {
+  let sub = 0; for (const id in cart) { const p = P.find(x => x.id === id); if (p) sub += p.price * cart[id]; }
+  const ship = sub && sub < CFG.freeShip ? CFG.ship : 0; return { sub, ship, tot: sub + ship };
+}
+fetch("products.json").then(r => r.json()).then(d => {
+  P = d; const t = totals();
+  $("lines").innerHTML = Object.keys(cart).map(id => { const p = P.find(x => x.id === id); return p ? `<div class="li"><span>${cart[id]} × ${p.name} <small>(${p.size})</small></span><span>${money(p.price * cart[id])}</span></div>` : ""; }).join("") || `<p>Your cart is empty. <a href="/#shop">Go shopping</a></p>`;
+  $("sub").textContent = money(t.sub); $("ship").textContent = t.ship ? money(t.ship) : "Free"; $("tot").textContent = money(t.tot);
+});
+$("f").addEventListener("submit", async e => {
+  e.preventDefault(); $("err").textContent = "";
+  const c = { name: $("name").value.trim(), email: $("email").value.trim(), phone: $("phone").value.trim(), address: $("addr").value.trim() };
+  if (!items().length) return $("err").textContent = "Your cart is empty.";
+  if (!c.name || !/^\S+@\S+\.\S+$/.test(c.email) || !c.address) return $("err").textContent = "Please fill in your name, a valid email, and your shipping address.";
+  if (!$("agree").checked) return $("err").textContent = "Please tick the confirmation box to continue.";
+  const manual = document.querySelector("input[name=pm]:checked").value === "manual";
+  $("go").disabled = true; $("go").textContent = "Please wait...";
+  try {
+    const r = await fetch(manual ? "/api/order" : "/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: items(), customer: c }) });
+    const d = await r.json();
+    if (d.url) { location.href = d.url; return; }
+    if (d.ok) { try { localStorage.removeItem("cart"); } catch (x) {} location.href = "/?order=received"; return; }
+    if (d.error === "not_configured") {
+      const t = totals();
+      const body = `Order request\n\n${items().map(i => { const p = P.find(x => x.id === i.id); return `${i.qty} x ${p.name} (${p.size})`; }).join("\n")}\n\nTotal: ${money(t.tot)}\n\nName: ${c.name}\nPhone: ${c.phone}\nAddress: ${c.address}`;
+      location.href = `mailto:${CFG.email}?subject=${encodeURIComponent("Order request")}&body=${encodeURIComponent(body)}`;
+    } else $("err").textContent = "Something went wrong. Please try again or email us.";
+  } catch (x) { $("err").textContent = "Could not reach the server. Please try again."; }
+  $("go").disabled = false; $("go").textContent = "Place order";
+});
+</script>
+</body>
+</html>

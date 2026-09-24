@@ -1,10 +1,17 @@
 [
-{"id":"bpc-157","name":"BPC-157","size":"5 mg vial","price":39,"mrp":49,"cat":"Peptides"},
-{"id":"tb-500","name":"TB-500","size":"5 mg vial","price":49,"mrp":59,"cat":"Peptides"},
-{"id":"ghk-cu","name":"GHK-Cu","size":"50 mg vial","price":34,"mrp":42,"cat":"Peptides"},
-{"id":"ipamorelin","name":"Ipamorelin","size":"5 mg vial","price":36,"mrp":45,"cat":"Peptides"},
-{"id":"cjc-1295","name":"CJC-1295 (no DAC)","size":"2 mg vial","price":38,"mrp":46,"cat":"Peptides"},
-{"id":"epitalon","name":"Epitalon","size":"10 mg vial","price":29,"mrp":35,"cat":"Peptides"},
-{"id":"selank","name":"Selank","size":"5 mg vial","price":32,"mrp":40,"cat":"Peptides"},
-{"id":"bac-water","name":"Bacteriostatic Water","size":"10 ml vial","price":9,"mrp":12,"cat":"Supplies"}
+{"id":"bpc-157","name":"BPC-157","brand":"pepcarepro","size":"5 mg vial","price":39,"mrp":49,"cat":"Peptides"},
+{"id":"tb-500","name":"TB-500","brand":"pepcarepro","size":"5 mg vial","price":49,"mrp":59,"cat":"Peptides"},
+{"id":"ghk-cu","name":"GHK-Cu","brand":"pepcarepro","size":"50 mg vial","price":34,"mrp":42,"cat":"Peptides"},
+{"id":"ipamorelin","name":"Ipamorelin","brand":"pepcarepro","size":"5 mg vial","price":36,"mrp":45,"cat":"Peptides"},
+{"id":"cjc-1295","name":"CJC-1295 (no DAC)","brand":"pepcarepro","size":"2 mg vial","price":38,"mrp":46,"cat":"Peptides"},
+{"id":"epitalon","name":"Epitalon","brand":"pepcarepro","size":"10 mg vial","price":29,"mrp":35,"cat":"Peptides"},
+{"id":"selank","name":"Selank","brand":"pepcarepro","size":"5 mg vial","price":32,"mrp":40,"cat":"Peptides"},
+{"id":"bac-water","name":"Bacteriostatic Water","brand":"pepcarepro","size":"10 ml vial","price":9,"mrp":12,"cat":"Supplies"},
+{"id":"acv-gummies","name":"Apple Cider Vinegar + Ginger Gummies","brand":"Viteey","size":"60 gummies","price":24,"mrp":30,"cat":"Wellness","img":"assets/acv-ginger-gummies.webp"},
+{"id":"colon-cleanse","name":"Colon Ultra Cleanse","brand":"Green Valley Naturals","size":"60 capsules","price":26,"mrp":32,"cat":"Wellness","img":"assets/colon-ultra-cleanse.webp"},
+{"id":"mangreens","name":"MANGREENS Superfood Powder","brand":"MITA","size":"Orange flavor","price":49,"mrp":59,"cat":"Wellness","img":"assets/mangreens.webp"},
+{"id":"moringa-extract","name":"Moringa Raw Herbal Extract","brand":"Global Healing","size":"2 fl oz","price":32,"mrp":38,"cat":"Wellness","img":"assets/moringa-extract.webp"},
+{"id":"moringa-powder","name":"Organic Moringa Powder","brand":"Micro Ingredients","size":"2 lb (907 g)","price":29,"mrp":36,"cat":"Wellness","img":"assets/moringa-powder.webp"},
+{"id":"performance-gummies","name":"Performance Gummies","brand":"UltimaPeak","size":"30 gummies","price":34,"mrp":42,"cat":"Wellness","img":"assets/performance-gummies.webp"},
+{"id":"shelajit-her","name":"Shilajit Gummies for Her","brand":"Bloomin","size":"30 gummies","price":29,"mrp":36,"cat":"Wellness","img":"assets/shilajit-gummies-her.webp"}
 ]
