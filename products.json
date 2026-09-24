@@ -1,0 +1,10 @@
+[
+{"id":"bpc-157","name":"BPC-157","size":"5 mg vial","price":39,"mrp":49,"cat":"Peptides"},
+{"id":"tb-500","name":"TB-500","size":"5 mg vial","price":49,"mrp":59,"cat":"Peptides"},
+{"id":"ghk-cu","name":"GHK-Cu","size":"50 mg vial","price":34,"mrp":42,"cat":"Peptides"},
+{"id":"ipamorelin","name":"Ipamorelin","size":"5 mg vial","price":36,"mrp":45,"cat":"Peptides"},
+{"id":"cjc-1295","name":"CJC-1295 (no DAC)","size":"2 mg vial","price":38,"mrp":46,"cat":"Peptides"},
+{"id":"epitalon","name":"Epitalon","size":"10 mg vial","price":29,"mrp":35,"cat":"Peptides"},
+{"id":"selank","name":"Selank","size":"5 mg vial","price":32,"mrp":40,"cat":"Peptides"},
+{"id":"bac-water","name":"Bacteriostatic Water","size":"10 ml vial","price":9,"mrp":12,"cat":"Supplies"}
+]

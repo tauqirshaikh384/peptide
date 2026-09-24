@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pepcarepro | Research peptides</title>
+<meta name="description" content="Research peptides in USD with secure checkout. For laboratory research use only.">
+<meta name="theme-color" content="#6f4ef2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#6f4ef2;--brand-d:#4b30c4;--ink:#17123a;--bg:#faf8ff;--card:#fff;--lime:#d9ff45;--line:#e4defa;--mute:#6b6590;
+--h:"Bricolage Grotesque",system-ui,sans-serif;--b:Inter,system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.55 var(--b);color:var(--ink);background:var(--bg)}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.strip{background:var(--ink);color:var(--lime);overflow:hidden;white-space:nowrap;font-size:14px;font-weight:600}
+.strip div{display:inline-block;padding:8px 0;animation:run 30s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip div{animation:none}}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 24px var(--h);text-decoration:none;letter-spacing:-.5px}
+.logo b{color:var(--brand)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:500}
+.bag{background:var(--brand);color:#fff;border:0;border-radius:99px;padding:9px 18px;font-weight:600}
+.hero{background:var(--brand);color:#fff;padding:64px 0 72px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+h1{font:800 clamp(40px,7vw,76px)/.98 var(--h);letter-spacing:-2px}
+.hero p{margin:20px 0 28px;max-width:46ch;font-size:18px;opacity:.92}
+.btn{display:inline-block;background:var(--lime);color:var(--ink);border:0;border-radius:99px;padding:14px 26px;font-weight:600;text-decoration:none}
+.vials{display:flex;gap:14px;justify-content:center;align-items:flex-end}
+.vial{width:74px;text-align:center}
+.vial i{display:block;width:34px;height:14px;margin:0 auto;background:var(--ink);border-radius:4px 4px 0 0}
+.vial span{display:flex;align-items:center;justify-content:center;height:130px;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,.2));border:2px solid rgba(255,255,255,.7);border-radius:8px 8px 14px 14px;font:800 13px var(--h);color:var(--ink);padding:0 4px;position:relative}
+.vial span:after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:var(--c,var(--lime));border-radius:0 0 12px 12px;z-index:-1}
+.vial span{z-index:0;isolation:isolate}
+.vials .vial:nth-child(2){transform:translateY(-22px)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;font-size:14px;font-weight:600}
+.tags span{border:1.5px solid rgba(255,255,255,.5);border-radius:99px;padding:5px 14px}
+section{padding:60px 0}
+h2{font:800 clamp(28px,4vw,42px)/1.1 var(--h);letter-spacing:-1px;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:24px}
+.chips{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.chip{background:#fff;border:1.5px solid var(--line);border-radius:99px;padding:8px 18px;font-weight:500}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column}
+.art{height:150px;border-radius:14px;background:#efeaff;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;position:relative}
+.art .vial{width:66px}.art .vial span{height:100px;border-color:var(--ink);background:#fff}
+.off{position:absolute;top:10px;left:10px;background:var(--lime);border-radius:99px;font-size:12px;font-weight:700;padding:3px 10px}
+.card h3{font:800 20px var(--h);margin:14px 0 2px}
+.card small{color:var(--mute)}
+.price{margin:10px 0 14px;font-size:22px;font-weight:600}
+.price s{font-size:14px;color:var(--mute);font-weight:400;margin-left:6px}
+.card .btn{margin-top:auto;background:var(--brand);color:#fff;text-align:center;padding:11px}
+.why{background:#fff;border-block:1px solid var(--line)}
+.why .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.why h3{font:800 19px var(--h);margin-bottom:4px}
+.why p{color:var(--mute);font-size:15px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--mute);margin-top:8px;max-width:70ch}
+footer{background:var(--ink);color:#cfc9f5;padding:44px 0;font-size:14px}
+footer h4{font:800 22px var(--h);color:#fff;margin-bottom:8px}
+footer p{max-width:80ch;margin-top:10px}
+#ov{position:fixed;inset:0;background:rgba(23,18,58,.5);display:none;z-index:9}
+#ov.on{display:block}
+#cart{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:10;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+#cart.on{transform:none}
+#cart>*{padding:16px 20px}
+#cart .top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+#cart .top h2{font-size:24px;margin:0}
+#items{flex:1;overflow:auto}
+.li{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.q{display:inline-flex;align-items:center;gap:8px;margin-top:4px}
+.q button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:#fff}
+.sum{border-top:1px solid var(--line);font-size:15px}
+.sum div{display:flex;justify-content:space-between}
+.sum .t{font-weight:700;font-size:18px;margin-top:6px}
+.sum label{display:flex;gap:8px;font-size:13px;color:var(--mute);margin:12px 0}
+.sum .btn{width:100%;background:var(--brand);color:#fff}
+.sum .btn:disabled{opacity:.45;cursor:not-allowed}
+.note{font-size:13px;color:#b3261e;min-height:18px}
+#ok{display:none;background:var(--lime);text-align:center;padding:12px;font-weight:600}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}nav a{display:none}}
+</style>
+</head>
+<body>
+<div id="ok">Order received. Thank you! A confirmation will arrive by email.</div>
+<div class="strip"><div id="mq"></div></div>
+<header><div class="wrap">
+<a class="logo" href="#top">pep<b>care</b>pro</a>
+<nav><a href="#shop">Shop</a><a href="#why">Why us</a><a href="#faq">FAQ</a><button class="bag" id="open" aria-label="Open cart">Cart (<span id="n">0</span>)</button></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<div>
+<h1>Peptides for the curious lab.</h1>
+<p>Research-grade peptides, priced in US dollars, with secure card checkout. Everything we sell is for laboratory research use only.</p>
+<a class="btn" href="#shop">Shop peptides</a>
+<div class="tags"><span>USD pricing</span><span>Secure checkout</span><span>Free shipping over $150</span></div>
+</div>
+<div class="vials" aria-hidden="true">
+<div class="vial"><i></i><span style="--c:#d9ff45">BPC<br>157</span></div>
+<div class="vial"><i></i><span style="--c:#ff9de2">TB<br>500</span></div>
+<div class="vial"><i></i><span style="--c:#8fe3ff">GHK<br>Cu</span></div>
+</div>
+</div></div>
+
+<section id="shop"><div class="wrap">
+<h2>The full lineup</h2>
+<p class="sub">Every product we stock. Filter by type.</p>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+<h2>How ordering works</h2><p class="sub">Simple on purpose.</p>
+<div class="grid">
+<div><h3>Add to cart</h3><p>Pick your vials and open the cart to review the total in US dollars.</p></div>
+<div><h3>Pay securely</h3><p>Card payment happens on Stripe's hosted page. Card details never touch this site.</p></div>
+<div><h3>We ship it</h3><p>Orders ship within 1 to 2 business days. Free shipping over $150, otherwise $9.99 flat.</p></div>
+<div><h3>Ask us anything</h3><p>Questions about your order? Email us any day and we will reply within one business day.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap">
+<h2>Asked a lot</h2><p class="sub">The quick answers.</p>
+<details><summary>Are these for human use?</summary><p>No. All products are sold strictly for laboratory research use only. They are not medicines, supplements, or intended for human or animal consumption.</p></details>
+<details><summary>How do I pay?</summary><p>By card on a secure Stripe checkout page. Prices are in US dollars.</p></details>
+<details><summary>How much is shipping?</summary><p>Free on orders of $150 or more. Below that it is a flat $9.99. We currently ship within the USA.</p></details>
+<details><summary>Can I change or cancel an order?</summary><p>Yes, any time before it ships. Email us with your order details.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+<h4>pepcarepro</h4>
+<div>Contact: <a href="mailto:orders@pepcarepro.com">orders@pepcarepro.com</a></div>
+<p>All products are intended for in-vitro laboratory research use only. Not for human or veterinary use. Not evaluated by the FDA to diagnose, treat, cure, or prevent any disease. By purchasing you confirm you are 21 or older and a qualified researcher.</p>
+<p>&copy; 2026 pepcarepro. All rights reserved.</p>
+</div></footer>
+
+<div id="ov"></div>
+<aside id="cart" aria-label="Shopping cart">
+<div class="top"><h2>Your cart</h2><button id="close" class="chip">Close</button></div>
+<div id="items"></div>
+<div class="sum">
+<div><span>Subtotal</span><span id="sub">$0.00</span></div>
+<div><span>Shipping</span><span id="ship">$0.00</span></div>
+<div class="t"><span>Total</span><span id="tot">$0.00</span></div>
+<label><input type="checkbox" id="agree"> I am 21 or older, and I confirm these products are for laboratory research use only.</label>
+<div class="note" id="err"></div>
+<button class="btn" id="go" disabled>Checkout</button>
+</div>
+</aside>
+
+<script>
+// ---- Edit these ----
+const CFG = { email: "orders@pepcarepro.com", freeShip: 150, ship: 9.99 };
+// --------------------
+const $ = id => document.getElementById(id);
+const money = n => "$" + n.toFixed(2);
+let P = [], cat = "All", cart = {};
+try { cart = JSON.parse(localStorage.getItem("cart") || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem("cart", JSON.stringify(cart)); } catch (e) {} };
+
+const msg = ["Free shipping over $150", "Prices in US dollars", "Secure card checkout", "For laboratory research use only"];
+$("mq").textContent = (msg.join("  ✦  ") + "  ✦  ").repeat(4);
+
+function vial(name, hue) {
+  return `<div class="vial"><i></i><span style="--c:${hue}">${name.split(" ")[0]}</span></div>`;
+}
+const hues = ["#d9ff45", "#ff9de2", "#8fe3ff", "#ffd27a", "#b9a6ff", "#9dffc4", "#ffb199", "#c9e4ff"];
+
+function renderShop() {
+  const cats = ["All", ...new Set(P.map(p => p.cat))];
+  $("chips").innerHTML = cats.map(c => `<button class="chip" aria-pressed="${c === cat}" data-c="${c}">${c}</button>`).join("");
+  $("grid").innerHTML = P.filter(p => cat === "All" || p.cat === cat).map((p, i) => {
+    const off = Math.round((1 - p.price / p.mrp) * 100);
+    return `<div class="card"><div class="art"><span class="off">${off}% off</span>${vial(p.name, hues[i % hues.length])}</div>
+    <h3>${p.name}</h3><small>${p.size}</small>
+    <div class="price">${money(p.price)}<s>${money(p.mrp)}</s></div>
+    <button class="btn" data-add="${p.id}">Add to cart</button></div>`;
+  }).join("");
+}
+
+function totals() {
+  let sub = 0, n = 0;
+  for (const id in cart) { const p = P.find(x => x.id === id); if (p) { sub += p.price * cart[id]; n += cart[id]; } }
+  const ship = sub === 0 || sub >= CFG.freeShip ? 0 : CFG.ship;
+  return { sub, n, ship, tot: sub + ship };
+}
+
+function renderCart() {
+  const t = totals();
+  $("n").textContent = t.n;
+  $("items").innerHTML = t.n ? Object.keys(cart).map(id => {
+    const p = P.find(x => x.id === id); if (!p) return "";
+    return `<div class="li"><div><b>${p.name}</b><br><small>${p.size}</small>
+    <div class="q"><button data-m="${id}" aria-label="Remove one">−</button>${cart[id]}<button data-p="${id}" aria-label="Add one">+</button></div></div>
+    <b>${money(p.price * cart[id])}</b></div>`;
+  }).join("") : `<p class="sub" style="padding:20px 0">Your cart is empty. Add a product to get started.</p>`;
+  $("sub").textContent = money(t.sub);
+  $("ship").textContent = t.ship ? money(t.ship) : (t.sub ? "Free" : "$0.00");
+  $("tot").textContent = money(t.tot);
+  $("go").disabled = !t.n || !$("agree").checked;
+  save();
+}
+
+const setCart = on => { $("cart").classList.toggle("on", on); $("ov").classList.toggle("on", on); };
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.c) { cat = b.dataset.c; renderShop(); }
+  if (b.dataset.add) { cart[b.dataset.add] = (cart[b.dataset.add] || 0) + 1; renderCart(); setCart(true); }
+  if (b.dataset.p) { cart[b.dataset.p]++; renderCart(); }
+  if (b.dataset.m) { if (--cart[b.dataset.m] <= 0) delete cart[b.dataset.m]; renderCart(); }
+});
+$("open").onclick = () => setCart(true);
+$("close").onclick = $("ov").onclick = () => setCart(false);
+$("agree").onchange = renderCart;
+
+$("go").onclick = async () => {
+  $("err").textContent = ""; $("go").disabled = true; $("go").textContent = "Loading...";
+  const items = Object.keys(cart).map(id => ({ id, qty: cart[id] }));
+  try {
+    const r = await fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items }) });
+    const d = await r.json();
+    if (d.url) { location.href = d.url; return; }
+    if (d.error === "not_configured") {
+      // Stripe not set up yet: send the order as an email request instead.
+      const t = totals();
+      const lines = Object.keys(cart).map(id => { const p = P.find(x => x.id === id); return `${cart[id]} x ${p.name} (${p.size}) - ${money(p.price * cart[id])}`; });
+      const body = `Order request\n\n${lines.join("\n")}\n\nShipping: ${money(t.ship)}\nTotal: ${money(t.tot)}\n\nName:\nShipping address:\n`;
+      location.href = `mailto:${CFG.email}?subject=${encodeURIComponent("Order request")}&body=${encodeURIComponent(body)}`;
+    } else { $("err").textContent = "Checkout failed. Please try again or email us."; }
+  } catch (e) { $("err").textContent = "Could not reach checkout. Please try again."; }
+  $("go").textContent = "Checkout"; renderCart();
+};
+
+if (new URLSearchParams(location.search).get("order") === "success") {
+  $("ok").style.display = "block"; cart = {}; save(); history.replaceState(null, "", "/");
+}
+fetch("products.json").then(r => r.json()).then(d => { P = d; renderShop(); renderCart(); });
+</script>
+</body>
+</html>
